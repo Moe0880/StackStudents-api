@@ -13,6 +13,7 @@ app.get("/:id", (req, res) => {
   return res.render("index", { student: studentData });
 });
 
+
 app.all("*", (req, res) => {
   return res.sendStatus(404);
 });
