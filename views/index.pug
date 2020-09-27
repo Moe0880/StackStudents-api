@@ -1,23 +1,46 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body
-         h1(class="title") Welcome to  Stack Education
-                     h4(id="get-students")
-                        a(type="button" onclick="activate('get-students')")
-                                span GET students
-                                    h4(id="get-students-id")
-                                        a(onclick="activate('get-students-id')") 
-                                                span GET students/id
-                                                    h4(id="post-students")
-                                                        a(onclick="activate('post-students')")
-                                                                span POST students
-                                                                    h4(id="delete-students")
-                                                                        a(onclick="activate('delete-students')")
-                                                                                span DELETE students/id
-                                                                                    
-                                                    
-                                                                    
+doctype html
+html
+  include partials/head.pug
+
+  body
+    div(class="container")
+      div(class="header")
+        div(class="logo")
+          a(href="/")
+            img(src="/images/logo.png", height="128", width="318")
+
+    div(class="content")
+      div(class="title") Welcome to the Stack Education Students
+      div(class="doc-panels")
+        div(class="sidebar")
+          
+          div(id="get-students-end-point", class="endpoint newroute")
+            a(onclick="activateEndpoint('get-students')")
+              span(class="get") GET
+              |  /students
+          div(id="get-students-id-end-point", class="endpoint")
+            a(onclick="activateEndpoint('get-students-id')")
+              span(class="get") GET
+              |  /students/{id}
+          div(id="post-students-end-point", class="endpoint")
+            a(onclick="activateEndpoint('post-students')")
+              span(class="post") POST
+              |  /students
+          div(id="delete-students-end-point", class="endpoint")
+            a(onclick="activateEndpoint('delete-students')")
+              span(class="delete") DELETE
+              |  /students/{id}
+         
+        div(id="get-Students-doc", class="doc")
+          include partials/docs/getStudents.pug
+        div(id="get-Students-id-doc", class="doc hidden")
+          include partials/docs/getstudentById.pug
+        div(id="get-students-doc", class="doc hidden")
+          include partials/docs/getstudents.pug
+        div(id="get-students-id-doc", class="doc hidden")
+          include partials/docs/getstudentById.pug
+        div(id="post-students-doc", class="doc hidden")
+          include partials/docs/poststudent.pug
+        div(id="delete-students-doc", class="doc hidden")
+          include partials/docs/deletestudent.pug
+        
