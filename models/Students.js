@@ -1,6 +1,6 @@
-const Students = (connection, Sequelize, Departments) =>
+const Students = (connection, Sequelize) =>
   connection.define(
-    "animals",
+    "Students",
     {
       id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
       name: { type: Sequelize.STRING, allowNull: false },
@@ -14,4 +14,4 @@ const Students = (connection, Sequelize, Departments) =>
     { paranoid: true }
   );
 
-module.exports = Animals;
+module.exports = Students;
