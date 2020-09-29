@@ -37,4 +37,7 @@ const stackStudents = [
     location: "Nj",
   },
 ];
+stackStudents.forEach(({ id, name, gender, location }) =>
+  console.log(`('${id}','${name}','${gender}','${location}')`)
+);
 module.exports = stackStudents;

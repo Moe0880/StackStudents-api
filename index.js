@@ -1,8 +1,9 @@
 const express = require("express");
-const stackStudents = require("./stackStudents");
+const stackStudents = require("./tests/mocks/stackStudents");
 const app = express();
 app.set("view engine", "pug");
 app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   return res.render("index", { stackStudents });
 });
